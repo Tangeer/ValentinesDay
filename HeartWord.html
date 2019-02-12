@@ -1,0 +1,101 @@
+﻿<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+	<script type="text/javascript" src="js/jq.snow.js"></script>
+</head> 
+
+<body>
+<!--下面是调用方法和参数说明-->
+	<script>
+	$(function(){
+		$.fn.snow({ 
+			minSize: 5,		//雪花的最小尺寸
+			maxSize: 50, 	//雪花的最大尺寸
+			newOn: 200		//雪花出现的频率 这个数值越小雪花越多
+		});
+	});
+	</script>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code" style="font-size:14px;">
+				<span class="comments" style="color:white;">*******真心话*******</span><br />
+				<span class="comments">* 碧玉：今天是2019年2月14日。</span><br />
+				<span class="comments">* 我借这个网页来庆祝这个特殊的日子（Valentine's Day）。 </span><br />
+				<span class="comments">* 虽然，我不是一个很擅长表达言语的人。 </span><br />
+				<span class="comments">* 但我这是我发自内心的话。</span><br />
+				<span class="comments">* 和你相识起码有五年的时间，认识你很开心，很快乐，真的。</span><br />
+				<span class="comments">* 我承认我大学没谈过恋爱，这是我第二次对人表白，第一次是大二的时候，可人家先有了男盆友而不知。</span><br />
+				<span class="comments">* 五年的交往，我们彼此也是比较了解，也许曾经有过太多的放不下导致我不太想这方面的事。</span><br />
+				<span class="comments">* 而如今，你我都已经工作了，那些青春岁月已不复存在，于我也是需要改变。</span><br />
+				<span class="comments">* 你是我老乡，是我同学，是我研友，是我认识时间最长，还保持着联系的女生。</span><br />
+				<span class="comments">* 今天，我想对你表白，我喜欢你，做我女朋友吧。</span><br />
+				<span class="comments">* 我不知道，你曾收到别人的表白？是否你有男盆友了？我还是想说出我的心里话。</span><br />
+				<span class="comments">* 大学毕业了，同学的关系只会越来越淡，而我只想跟你就这样一直保持着这份友谊。</span><br />
+				<span class="comments">* 我不是高富帅，也不太会说话，我是什么样的人，你也是知道个大概的。</span><br />
+				<span class="comments">* 目前，工作算是稳定，除了挣钱，还要规划人生了。</span><br />
+				<span class="comments">* 如果你可以给我机会，我愿意成为你男盆友，将这份喜欢发展为爱。</span><br />
+				<span class="comments">* 在你需要的时候能有我陪着，在有困难的时候能有我帮忙分担。</span><br />
+				<span class="comments">* 如果我没得机会，那我也是衷心祝福你往后余生，一切安好！</span><br />
+				<span class="comments">* 嗯，就这样，不管结果咋样，我坦然接受了，看完后也不知你是啥感受？总之，希望不要影响你的生活。</span><br />
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						        碧玉,我们已经相识了：
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						<div class="signature">----小林汤</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2013, 09, -32);
+		together.setHours(00);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+	</body>
+</html>
